@@ -62,7 +62,6 @@ const Obj = [
                 id:08,
                 quantidade:0
             },
-            
 
         ]
 
@@ -74,18 +73,20 @@ const Obj = [
                 <a key=${val.id}>Adicionar ao carrinho</a>
                 </div>`;
             })
-            
+
         }
-            
+
 iniciarLoja()
 
 
 var linkMercadorias = document.getElementsByTagName('a')
 
     addCarrinho = () =>{
-        let jsObj =JSON.stringify(Obj)
-        console.log(jsObj)
-
+        console.log(Obj)
+      let objSave = JSON.stringify(Obj)
+      let localObj = localStorage.setItem('save',objSave)
+      let showObj = localStorage.getItem('save')
+      console.log(showObj)
 }
 //o link é um array, então há vários deles.
 //Sendo assim precisamos dizer a cada um deles o que acontecerá quando clicar para adicionar ao carrinho
@@ -95,7 +96,7 @@ for(let i = 0; i < linkMercadorias.length; i++){
         Obj[key].quantidade++
         AttCarrinho()
         addCarrinho()
-        
+
         return false;
     })
 }
@@ -104,18 +105,11 @@ AttCarrinho = () =>{
     let createCar = document.getElementById('carrinho')
     Obj.map((val) =>{
         if(val.quantidade >0){
-        createCar.innerHTML += `
+            // let jsObj =JSON.stringify(Obj)
+            // console.log(jsObj)
+       createCar.innerHTML += `
         <p class="textoCarrinho">Produto:${val.nome}. Quantidade: ${val.quantidade}</p>`
     }
     })
 }
-// const textoCar = document.getElementsByClassName("textoCarrinho").value
-// function save(){
-//     let FSave =localStorage.setItem('salvo', textoCar)
-//     let saveCar =localStorage.getItem('salvo', textoCar)
-//     let jsCar = JSON.parse(saveCar)
-    
-//     console.log(saveCar)
-// }
-
 
