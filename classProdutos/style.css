@@ -86,3 +86,55 @@ a:hover{
     font-weight: 400;
     border-bottom: 1px solid black;
 }
+
+@media (max-width:990px) {
+    #all{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #produtos{
+        display: grid;
+        grid:"tenis tenis tenis"
+         "tenis tenis tenis"
+         "tenis tenis tenis"
+    }
+    #carrinho{
+        width: 50vw;
+        height: 500px;
+        
+    }
+}
+@media(max-width:777px){
+    #all{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #produtos{
+        display: grid;
+        grid:"tenis tenis "
+         "tenis tenis "
+         "tenis tenis "
+    }
+    #carrinho{
+        width: 100vw;
+        height: 500px;
+    }
+}
+@media (max-width: 590px) {
+    #all{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #produtos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #carrinho{
+        width: 100vw;
+        height: 500px;
+    }
+}
